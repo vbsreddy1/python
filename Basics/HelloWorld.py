@@ -9,4 +9,4 @@ print('VBSR the GREAT')
 # Simple comment
 greeting = "Wish You Many more Happy Return of the Day"
 name = "VBSR"
-print(greeting +' ' + name)
+print(greeting + ' ' + name)
