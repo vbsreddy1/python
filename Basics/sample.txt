@@ -1,3 +1,3 @@
 This is sample text file,
-to test the I/O operations.vbsreddy
+to test the I/O operations.
 vbsreddy
