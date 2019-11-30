@@ -3,16 +3,15 @@ __date__ = '30/11/2019'
 
 from random import randint
 randomInt = randint(1,100)
-print(randomInt)
 count = 0
 previousGuess = []
 while(True):
     a = int(input("Guess the number:"))
-    previousGuess.append(a)
-    print(previousGuess)
-    
-    if a== randomInt:
-        print("Congrats! You have guessed the number correctly.:-)")
+    if a<1 or a>100:
+        print('OUT OF BOUNDS')
+        continue
+    elif a== randomInt:
+        print("Congrats! You have guessed the number correctly.")
         print(f'You have taken {count} guesses.')
         break
     elif count==0:
@@ -21,9 +20,10 @@ while(True):
         else:
             print('COLD!')
     else:
-        if abs(previousGuess[-1]-randomInt) <= abs(a-randomInt) and abs(previousGuess[-1]-randomInt)<=10:
+        # if the previous guessed number is farther away from random-integer than current guessed number, if-block will execute.
+        if abs(previousGuess[-1]-randomInt) >= abs(a-randomInt):
             print('WARMER!')
         else:
             print('Farther!')
     count +=1
-
+    previousGuess.append(a)
