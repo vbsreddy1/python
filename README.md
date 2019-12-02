@@ -3,4 +3,4 @@
 
 **Basics** - My Learning with Python
 
-**Challenges** - Programs which I solved on different platforms.
+**Challenges** - Programs solved on different platforms.
