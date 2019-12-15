@@ -1,6 +1,6 @@
 # Tic - Tac - Toe
 
-Create a Tic Tac Toe game.
+Create a basic Tic Tac Toe game which uses the numbers to draw the pattern.
 
 Here are the requirements:
 
