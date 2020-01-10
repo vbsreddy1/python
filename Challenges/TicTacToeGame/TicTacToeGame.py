@@ -4,7 +4,14 @@ board = [' ']*9
 from os import system, name
 # define our clear function
 def screen_clear():
-    _ = system('clear')
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
+        _ = system('clear')
+
+    # for mac and linux(here, os.name is 'posix')
+    else:
+        _ = system('clear')
 
 def display_board():
     print('   |   |')
