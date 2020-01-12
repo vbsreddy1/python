@@ -1,5 +1,4 @@
 
-board = [' ']*9
 
 from os import system, name
 # define our clear function
@@ -13,7 +12,7 @@ def screen_clear():
     else:
         _ = system('clear')
 
-def display_board():
+def display_board(board):
     print('   |   |')
     print(' ' + board[6] + ' | ' + board[7] + ' | ' + board[8])
     print('   |   |')
@@ -26,7 +25,7 @@ def display_board():
     print(' ' + board[0] + ' | ' + board[1] + ' | ' + board[2])
     print('   |   |')
 
-def checkBoard():
+def checkBoard(board):
     if (board[0], board[1], board[2]) == ('X', 'X', 'X') or (board[3], board[4], board[5]) == ('X', 'X', 'X') or (board[6], board[7], board[8]) == ('X', 'X', 'X') or (board[0], board[3], board[6]) == ('X', 'X', 'X') or (board[1], board[4], board[7]) == ('X', 'X', 'X') or (board[2], board[5], board[8]) == ('X', 'X', 'X') or (board[0], board[4], board[8]) == ('X', 'X', 'X') or (board[2], board[4], board[6]) == ('X', 'X', 'X'):
         print('Player-1 wins')
         return 1
@@ -37,36 +36,45 @@ def checkBoard():
         print('Draw')
         return 1
 
-screen_clear()
+def game(playernum, board):
+    mark = ' '
+    while(True):
+        try:
+            board_position = int(input(f"Player-{playernum}: Please enter a number for the board position choice: "))
+            if playernum == 1:
+                mark = "X"
+            else:
+                mark = "O"
+            if board[board_position-1] == ' ':
+                board[board_position-1] = mark
+                return board
+            else:
+                print("Kindly please check the board position you entered is already filled.")
+        except:
+            print("Please enter a number for board position within 1-9")
+
+
+
 while True:
-    while(True):
-        try:
-            board_position = int(input("Player-1: Please enter a number for the board position choice: "))
-            if board[board_position-1] == ' ':
-                board[board_position-1] = "X"
-                break
-            else:
-                print("Kindly please check the board position you entered is already filled.")
-        except:
-            print("Please enter a number for board position within 1-9")
-
+    board = [' ']*9
     screen_clear()
-    display_board()
-    if checkBoard()==1:
-        break
+    print('Player-1 symbol ******* X \nPlayer-2 symbol ------- O')
+    display_board(board)
+    while True:
+        board = game(1, board)
+        screen_clear()
+        display_board(board)
+        if checkBoard(board)==1:
+            break
 
-    while(True):
-        try:
-            board_position = int(input("Player-2: Please enter a number for the board position choice: "))
-            if board[board_position-1] == ' ':
-                board[board_position-1] = "O"
-                break
-            else:
-                print("Kindly please check the board position you entered is already filled.")
-        except:
-            print("Please enter a number for board position within 1-9")
+        board = game(2, board)
 
-    screen_clear()
-    display_board()
-    if checkBoard()==1:
+        screen_clear()
+        display_board(board)
+        if checkBoard(board)==1:
+            break
+
+    replay = input("Do you want replay the game(yes/no):")
+    replay = replay.upper()
+    if replay != 'YES' and replay != 'Y':
         break
