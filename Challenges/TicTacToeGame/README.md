@@ -9,4 +9,5 @@ Here are the requirements:
 * You should be able to accept input of the player position from numberpad(1-9) and then place a symbol on the board
 
 Structure of TictacToe board with resemblence to numberpad
-![TicTacToe with numpad]/Challenges/TicTacToeGame/tictactoe.jpeg
+
+![TicTacToe with numpad](/Challenges/TicTacToeGame/tictactoe.jpeg)
