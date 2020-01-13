@@ -1,6 +1,3 @@
-player1count = 0
-player2count = 0
-totalcount = 0
 
 from os import system, name
 # define our clear function
@@ -28,9 +25,9 @@ def display_board(board):
     print('   |   |')
 
 def checkBoard(board):
+    global player1count, player2count, totalcount
     if (board[0], board[1], board[2]) == ('X', 'X', 'X') or (board[3], board[4], board[5]) == ('X', 'X', 'X') or (board[6], board[7], board[8]) == ('X', 'X', 'X') or (board[0], board[3], board[6]) == ('X', 'X', 'X') or (board[1], board[4], board[7]) == ('X', 'X', 'X') or (board[2], board[5], board[8]) == ('X', 'X', 'X') or (board[0], board[4], board[8]) == ('X', 'X', 'X') or (board[2], board[4], board[6]) == ('X', 'X', 'X'):
         print(f'{player1} wins')
-        print(player1count)
         player1count = player1count+1
         totalcount = totalcount+1
         return 1
@@ -66,6 +63,9 @@ screen_clear()
 player1 = input("Enter Player-1 Name:")
 player2 = input("Enter Player-2 Name:")
 print(f'{player1} symbol ******* X \n{player2} symbol ------- O')
+player1count = 0
+player2count = 0
+totalcount = 0
 
 while True:
     board = [' ']*9
