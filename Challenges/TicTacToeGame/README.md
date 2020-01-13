@@ -6,4 +6,9 @@ Here are the requirements:
 
 * 2 players should be able to play the game (both sitting at the same computer)
 * The board should be printed out every time a player makes a move
-* You should be able to accept input of the player position and then place a symbol on the board
+* You should be able to accept input of the player position from numberpad(1-9) and then place a symbol on the board
+
+Structure of TictacToe board with resemblence to numberpad
+* 7 8 9
+* 4 5 6
+* 1 2 3
