@@ -8,6 +8,8 @@ days = int(input("Enter number of days:"))
 while True:
     if years>= 3:
         numOfHuns = principalAmt/100
+        tempInterest = numOfHuns*interest*36
+        print(tempInterest)
         principalAmt = principalAmt+(numOfHuns*interest*36)
         print(principalAmt)
         years=years-3
